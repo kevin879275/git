@@ -10,7 +10,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
-
 use_cuda = torch.cuda.is_available()
 device   = torch.device("cuda" if use_cuda else "cpu")
 print(device)
@@ -37,7 +36,7 @@ print(classes_index)
 data_loader_image = {x:torch.utils.data.DataLoader(dataset=data_image[x], batch_size =20, shuffle = True)
                      for x in ["train", "val"]}
 data_loader_image["train"]
-it = iter(data_loader_image["train"])
+'''it = iter(data_loader_image["train"])
 first_batch_x, first_batch_y = next(it)
 second_batch_x, second_batch_y = next(it)
 print(first_batch_x.shape, first_batch_y.shape)
@@ -47,7 +46,7 @@ imgArray = img.numpy()
 print(imgArray.shape, imgArray.min(), imgArray.max())
 imgArray = imgArray*0.5+0.5
 print(imgArray.shape, imgArray.min(), imgArray.max())
-imgArray1 = np.zeros((680, 1810, 3))
+imgArray1 = np.zeros((683, 1818, 3))
 imgArray1[:,:,0] = imgArray[0, :, :]
 imgArray1[:,:,1] = imgArray[1, :, :]
 imgArray1[:,:,2] = imgArray[2, :, :]
@@ -55,7 +54,7 @@ imgArray1.shape
 plt.figure(figsize=(18, 6))
 plt.imshow(imgArray1)
 plt.show()
-print([classes[i] for i in first_batch_y])
+print([classes[i] for i in first_batch_y])'''
 model = models.vgg16(pretrained=True)
 print(model)
 for parma in model.parameters():
@@ -92,9 +91,12 @@ for epoch in range(n_epochs):
             y = Variable(y).to(device)
 
             optimizer.zero_grad()
+            #print(X)
             y_pred = model(X)
+            print(y_pred)
             _, pred = torch.max(y_pred.data, 1)
-
+            print(_)
+            print(pred)
             loss = cost(y_pred, y)
             if param == "train":
                 loss.backward()
@@ -112,7 +114,7 @@ for epoch in range(n_epochs):
     now_time = time.time() - since
     print("Training time is:{:.0f}m {:.0f}s".format(now_time // 60, now_time % 60))
 
-torch.save(model.state_dict(), 'vgg16_catdog.pkl') # parameters
+torch.save(model.state_dict(), 'vgg16_catdog.pkl') # parameters'''
 
 use_cuda = torch.cuda.is_available()
 device   = torch.device("cuda" if use_cuda else "cpu")

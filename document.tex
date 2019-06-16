@@ -1,21 +1,7 @@
-%Copyright 2014 Jean-Philippe Eisenbarth
-%This program is free software: you can 
-%redistribute it and/or modify it under the terms of the GNU General Public 
-%License as published by the Free Software Foundation, either version 3 of the 
-%License, or (at your option) any later version.
-%This program is distributed in the hope that it will be useful,but WITHOUT ANY 
-%WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
-%PARTICULAR PURPOSE. See the GNU General Public License for more details.
-%You should have received a copy of the GNU General Public License along with 
-%this program.  If not, see <http://www.gnu.org/licenses/>.
-
-%Based on the code of Yiannis Lazarides
-%http://tex.stackexchange.com/questions/42602/software-requirements-specification-with-latex
-%http://tex.stackexchange.com/users/963/yiannis-lazarides
-%Also based on the template of Karl E. Wiegers
-%http://www.se.rit.edu/~emad/teaching/slides/srs_template_sep14.pdf
-%http://karlwiegers.com
 \documentclass{scrreprt}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage[encapsulated]{CJK}
 \usepackage{listings}
 \usepackage{underscore}
 \usepackage[bookmarks=true]{hyperref}
@@ -41,21 +27,21 @@
 %}
 \usepackage{hyperref}
 \begin{document}
-
+\begin{CJK*}{UTF8}{bsmi}
 \begin{flushright}
     \rule{16cm}{5pt}\vskip1cm
     \begin{bfseries}
-        \Huge{Cats And Dogs\\Classification}\\
+        \Huge{SOFTWARE REQUIREMENTS \\SPECIFICATION}\\
         \vspace{1.9cm}
         for\\
         \vspace{1.9cm}
-        Final Project\\
+        貓狗辨識系統\\
         \vspace{1.9cm}
-        Prepared by Team 9\\
+        \Large {Prepared by 1051433 葛東昇 1051514 沈家葳\\1053344 高浩然 1053348 黃世旻}\\
+        \vspace{3.8cm}
+        開放平台第9組\\
         \vspace{1.9cm}
-        Organization\\
-        \vspace{1.9cm}
-        \today\\
+        June 21, 2019\\
     \end{bfseries}
 \end{flushright}
 
@@ -135,5 +121,5 @@
 \section{Security Requirements}
 
 
-
+\end{CJK*}
 \end{document}

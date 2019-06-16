@@ -28,7 +28,7 @@ class dataloader():
             classes_index = data_image["train"].class_to_idx
             print(classes)
             print(classes_index)
-            data_loader_image = {x: torch.utils.data.DataLoader(dataset=data_image[x], batch_size=20, shuffle=True)
+            data_loader_image = {x: torch.utils.data.DataLoader(dataset=data_image[x], batch_size=6, shuffle=True)
                                  for x in ["train", "val"]}
             return data_image, data_loader_image
         else:

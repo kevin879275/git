@@ -19,7 +19,7 @@ print(device)
 is_train = False;
 dataloader = dataloader()
 
-data_image, data_loader_test_img = dataloader.load_data(is_train)
+test_number, data_loader_test_img = dataloader.load_data(is_train)
 
 vgg16 = models.vgg16(pretrained=True)
 
@@ -52,7 +52,10 @@ for i in (lst):
         print("cat", end=", ")
     elif i == 1:
         print("dog", end=", ")
-imgArray1 = np.zeros((228, 1358, 3))
+if(test_number < 9):
+    imgArray1 = np.zeros((228, 224*test_number+(2*test_number+2), 3))
+else:
+    imgArray1 = np.zeros((228+(226*(test_number//8)), 1810, 3))
 imgArray1[:,:,0] = imgArray[0, :, :]
 imgArray1[:,:,1] = imgArray[1, :, :]
 imgArray1[:,:,2] = imgArray[2, :, :]

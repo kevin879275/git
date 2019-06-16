@@ -39,11 +39,10 @@ class dataloader():
 
             # Google 找幾張 cat, dog images 放到 Cat_dog_test/test 資料夾
             data_test_img = datasets.ImageFolder(root=path, transform=transform)
-
-            data_loader_test_img = torch.utils.data.DataLoader(dataset=data_test_img, batch_size=6)
+            test_number = len(data_test_img)
+            data_loader_test_img = torch.utils.data.DataLoader(dataset=data_test_img, batch_size=test_number)
             image, _ = next(iter(data_loader_test_img))
             image.shape
 
-            return data_loader_test_img
-
+            return test_number, data_loader_test_img
 

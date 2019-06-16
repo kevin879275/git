@@ -22,8 +22,8 @@ data_image, data_loader_image = dataloader.load_data(is_train)
 model = models.vgg16(pretrained=True)
 print(model)
 
-for parma in model.parameters():
-    parma.requires_grad = False
+'''for parma in model.parameters():
+    parma.requires_grad = False'''
 model.classifier = torch.nn.Sequential(torch.nn.Linear(25088, 4096),
                                        torch.nn.ReLU(),
                                        torch.nn.Dropout(p=0.5),
@@ -58,10 +58,10 @@ for epoch in range(n_epochs):
             optimizer.zero_grad()
             #print(X)
             y_pred = model(X)
-            print(y_pred)
+            '''print(y_pred)'''
             _, pred = torch.max(y_pred.data, 1)
-            print(_)
-            print(pred)
+            '''print(_)
+            print(pred)'''
             loss = cost(y_pred, y)
             if param == "train":
                 loss.backward()

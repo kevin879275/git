@@ -34,7 +34,7 @@ model.classifier = torch.nn.Sequential(torch.nn.Linear(25088, 4096),
 model.to(device)
 
 cost = torch.nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(model.classifier.parameters())
+optimizer = torch.optim.ASGD(model.classifier.parameters())
 n_epochs = 10
 for epoch in range(n_epochs):
     since = time.time()

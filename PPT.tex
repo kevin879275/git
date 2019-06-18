@@ -213,59 +213,65 @@
 
 \section{Dataset}
 
+
 \begin{frame}{The size of your dataset should be larger than 1K }
+\begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
-    My first point.
-  }
-  \item {
-    My second point.
+The size of our dataset 大小為26.0MB 共有1200個檔案如Fig.\,\ref{fig:1} \\
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=5cm]{dataset.jpg} 
+\end{center} 
+\label{fig:1} 
+\caption{簡易流程圖} 
+\end{figure}
   }
   \end{itemize}
+\end{CJK*}
 \end{frame}
 
 \begin{frame}{How you collect/build your dataset?}
+\begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
-    My first point.
+    Collect：train跟validation的部份我們上kaggle抓裡面的圖片下來用，另外test的部分則是我們自己去拍攝。
   }
   \item {
-    My second point.
+    Build：將照片中間往外開始剪裁224*224，利用torch內建的tensorflow，將圖片處理成tensor數據。
   }
   \end{itemize}
+\end{CJK*}
 \end{frame}
 
 \begin{frame}{How many paired training samples in your dataset?}
+\begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
-    My first point.
-  }
-  \item {
-    My second point.
+    一共是1000張，貓狗各500張。
   }
   \end{itemize}
+\end{CJK*}
 \end{frame}
 
 \begin{frame}{How many paired validating samples in your dataset?}
+\begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
-    My first point.
-  }
-  \item {
-    My second point.
+     一共是200張，貓狗各100張。
   }
   \end{itemize}
+\end{CJK*}
 \end{frame}
 
 \begin{frame}{How many paired testing samples in your dataset?}
+\begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
-    My first point.
-  }
-  \item {
-    My second point.
+    一共是20張，貓狗各10張。
   }
   \end{itemize}
+\end{CJK*}
 \end{frame}
 
 

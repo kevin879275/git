@@ -70,8 +70,8 @@ def hit_me():
 
 
 window = tk.Tk()
-window.title('my window')
-window.geometry('1200x1200')
+window.title('貓狗辨識系統')
+window.geometry('900x900')
 
 var = tk.StringVar()    # 这时文字变量储存器
 l = tk.Label(window,

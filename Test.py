@@ -14,9 +14,10 @@ import tkinter as tk
 
 dataloader = dataloader()
 def hit_me():
-    global on_hit
-
-    var.set('asdasdasd')
+    ans = ""
+    a = "1"
+    a += "123"
+    var.set(a)
     use_cuda = torch.cuda.is_available()
     device = torch.device("cuda" if use_cuda else "cpu")
     print(device)
@@ -52,8 +53,10 @@ def hit_me():
     lst = list(pred.cpu().numpy())
     for i in (lst):
         if i == 0:
+            ans += "cat"
             print("cat", end=", ")
         elif i == 1:
+            ans+="dog"
             print("dog", end=", ")
     if (test_number < 9):
         imgArray1 = np.zeros((228, 224 * test_number + (2 * test_number + 2), 3))
@@ -66,19 +69,20 @@ def hit_me():
     plt.figure(figsize=(18, 6))
     plt.imshow(imgArray1)
     plt.show()
+    var.set(ans)
 
 window = tk.Tk()
 window.title('my window')
-window.geometry('200x100')
+window.geometry('1200x1200')
 
 var = tk.StringVar()    # 这时文字变量储存器
 l = tk.Label(window,
     textvariable=var,   # 使用 textvariable 替换 text, 因为这个可以变化
-    bg='green', font=('Arial', 12), width=15, height=2)
+    bg='white', font=('Arial', 12), width=15, height=2)
 l.pack()
 
 b = tk.Button(window,
-    text='hit me',      # 显示在按钮上的文字
+    text='開始辨識',      # 显示在按钮上的文字
     width=15, height=2,
     command=hit_me)     # 点击按钮式执行的命令
 b.pack()    # 按钮位置

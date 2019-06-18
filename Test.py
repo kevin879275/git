@@ -15,9 +15,6 @@ import tkinter as tk
 dataloader = dataloader()
 def hit_me():
     ans = ""
-    a = "1"
-    a += "123"
-    var.set(a)
     use_cuda = torch.cuda.is_available()
     device = torch.device("cuda" if use_cuda else "cpu")
     print(device)
@@ -56,7 +53,7 @@ def hit_me():
             ans += "cat"
             print("cat", end=", ")
         elif i == 1:
-            ans+="dog"
+            ans += "dog"
             print("dog", end=", ")
     if (test_number < 9):
         imgArray1 = np.zeros((228, 224 * test_number + (2 * test_number + 2), 3))
@@ -66,10 +63,11 @@ def hit_me():
     imgArray1[:, :, 1] = imgArray[1, :, :]
     imgArray1[:, :, 2] = imgArray[2, :, :]
     imgArray1.shape
+    var.set(ans)
     plt.figure(figsize=(18, 6))
     plt.imshow(imgArray1)
     plt.show()
-    var.set(ans)
+
 
 window = tk.Tk()
 window.title('my window')

@@ -50,10 +50,10 @@ def hit_me():
     lst = list(pred.cpu().numpy())
     for i in (lst):
         if i == 0:
-            ans += "cat"
+            ans += "cat  "
             print("cat", end=", ")
         elif i == 1:
-            ans += "dog"
+            ans += "dog  "
             print("dog", end=", ")
     if (test_number < 9):
         imgArray1 = np.zeros((228, 224 * test_number + (2 * test_number + 2), 3))
@@ -76,7 +76,7 @@ window.geometry('1200x1200')
 var = tk.StringVar()    # 这时文字变量储存器
 l = tk.Label(window,
     textvariable=var,   # 使用 textvariable 替换 text, 因为这个可以变化
-    bg='white', font=('Arial', 12), width=15, height=2)
+    bg='white', font=('Arial', 12), width=500, height=30)
 l.pack()
 
 b = tk.Button(window,

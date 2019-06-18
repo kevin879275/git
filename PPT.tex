@@ -1,77 +1,17 @@
-% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
-%
-% In principle, this file can be redistributed and/or modified under
-% the terms of the GNU Public License, version 2.
-%
-% However, this file is supposed to be a template to be modified
-% for your own needs. For this reason, if you use this file as a
-% template and not specifically distribute it as part of a another
-% package/program, I grant the extra permission to freely copy and
-% modify this file as you see fit and even to delete this copyright
-% notice. 
-
 \documentclass{beamer}
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage[encapsulated]{CJK}
-% There are many different themes available for Beamer. A comprehensive
-% list with examples is given here:
-% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
-% You can uncomment the themes below if you would like to use a different
-% one:
-%\usetheme{AnnArbor}
-%\usetheme{Antibes}
-%\usetheme{Bergen}
-%\usetheme{Berkeley}
-%\usetheme{Berlin}
-%\usetheme{Boadilla}
-%\usetheme{boxes}
-%\usetheme{CambridgeUS}
-%\usetheme{Copenhagen}
-%\usetheme{Darmstadt}
-%\usetheme{default}
-%\usetheme{Frankfurt}
-%\usetheme{Goettingen}
-%\usetheme{Hannover}
-%\usetheme{Ilmenau}
-%\usetheme{JuanLesPins}
-%\usetheme{Luebeck}
+
 \usetheme{Madrid}
-%\usetheme{Malmoe}
-%\usetheme{Marburg}
-%\usetheme{Montpellier}
-%\usetheme{PaloAlto}
-%\usetheme{Pittsburgh}
-%\usetheme{Rochester}
-%\usetheme{Singapore}
-%\usetheme{Szeged}
-%\usetheme{Warsaw}
+
 
 \title{Classification}
-
-% A subtitle is optional and this may be deleted
 \subtitle{Cats And Dogs}
-
 \author{Team9}
-
 \date{Presentation , 2019}
-% - Either use conference name or its abbreviation.
-% - Not really informative to the audience, more for people (including
-%   yourself) who are reading the slides online
-
 \subject{Theoretical Computer Science}
-% This is only inserted into the PDF information catalog. Can be left
-% out. 
 
-% If you have a file called "university-logo-filename.xxx", where xxx
-% is a graphic format that can be processed by latex or pdflatex,
-% resp., then you can add a logo as follows:
-
-% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
-% \logo{\pgfuseimage{university-logo}}
-
-% Delete this, if you do not want the table of contents to pop up at
-% the beginning of each subsection:
 \AtBeginSubsection[]
 {
   \begin{frame}<beamer>{Outline}
@@ -79,7 +19,7 @@
   \end{frame}
 }
 
-% Let's get started
+
 \begin{document}
 
 \begin{frame}
@@ -88,17 +28,16 @@
 
 \begin{frame}{Outline}
   \tableofcontents
-  % You might wish to add the option [pausesections]
+
 \end{frame}
 
 
 
-% Section and subsections will appear in the presentation overview
-% and table of contents.
+
 \section{Introduction}
 
 
-\begin{frame}{Introduction to your team}
+\begin{frame}{Introduction}{Introduction to your team}
 \begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
@@ -117,13 +56,13 @@
 \end{CJK*}
 \end{frame}
 
-\begin{frame}{Introduction to the problem you're trying to solve  }
+\begin{frame}{Introduction}{Introduction to the problem you're trying to solve  }
 \begin{CJK*}{UTF8}{bsmi}
-  \begin{itemize}
-  \item {
-    我們的這個專題主要要解決的問題是把一張照片讀進來，並且判斷這一張照片是貓還是狗。
-  }
-  \end{itemize}
+\begin{itemize}
+\item{
+我們的這個專題主要要解決的問題是把一張照片讀進來，並且判斷這一張照片是貓還是狗。
+}
+\end{itemize}
 \end{CJK*}
 \end{frame}
 
@@ -131,81 +70,87 @@
 
 \section{Methodology}
 
-\begin{frame}{Input of your model }
+\begin{frame}{Methodology}{Input of your model }
+\begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
-    My first point.
-  }
-  \item {
-    My second point.
+我們的網路大腦第一層為torch.nn.conv2D\\
+torch.nn.conv2D的輸入為 (N,C\_in,HW)
   }
   \end{itemize}
+\end{CJK*}
 \end{frame}
 
-\begin{frame}{Output of your model }
+\begin{frame}{Methodology}{Output of your model }
+\begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
-    My first point.
+model最後一層為nn.linear(4096,2)
   }
-  \item {
-    My second point.
+ \item {
+nn.linear的outputSize為2
+  }
+ \item {
+故最後輸出的tocrch size為(batch\_size,2)
   }
   \end{itemize}
+\end{CJK*}
 \end{frame}
 
-\begin{frame}{Each layer of your model}
-  \begin{itemize}
-  \item {
-    My first point.
-  }
-  \item {
-    My second point.
-  }
-  \end{itemize}
+\begin{frame}{Methodology}{Each layer of your model}
+\begin{CJK*}{UTF8}{bsmi}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=2cm]{Layer.jpg} 
+\end{center} 
+\label{fig:2} 
+\caption{Each Layer} 
+\end{figure}
+\end{CJK*}
 \end{frame}
 
-\begin{frame}{How you save your model?}
+\begin{frame}{Methodology}{How you save your model?}
+\begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
-    My first point.
-  }
-  \item {
-    My second point.
+torch.save( )\\
   }
   \end{itemize}
+\end{CJK*}  
 \end{frame}
 
-\begin{frame}{File size of your model }
+\begin{frame}{Methodology}{File size of your model }
+\begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
-    My first point.
-  }
-  \item {
-    My second point.
   }
   \end{itemize}
+\end{CJK*}
 \end{frame}
 
-\begin{frame}{What's your loss functions, and why? }
+\begin{frame}{Methodology}{What's your loss functions, and why? }
+\begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
-    My first point.
+CrossEntropyLoss( )\\
+ \item {
+torch.nn 用來做圖片分類的最主要有2種\\
+NLLLoss跟CrossEntropyLoss\\
+但NLLLoss需額外多一層softmax\\
   }
-  \item {
-    My second point.
   }
   \end{itemize}
+\end{CJK*}
 \end{frame}
 
-\begin{frame}{What's your optimizer and the setting of hyperparameter?}
+\begin{frame}{Methodology}{What's your optimizer and the setting of hyperparameter?}
+\begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
-    My first point.
-  }
-  \item {
-    My second point.
+torch.optim.ASGD
   }
   \end{itemize}
+\end{CJK*}
 \end{frame}
 
 
@@ -214,11 +159,11 @@
 \section{Dataset}
 
 
-\begin{frame}{The size of your dataset should be larger than 1K }
+\begin{frame}{Dataset}{The size of your dataset should be larger than 1K }
 \begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
-The size of our dataset 大小為26.0MB 共有1200個檔案如Fig.\,\ref{fig:1} \\
+The size of our dataset 大小為26.0MB 共有1200個檔案如圖\\
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=5cm]{dataset.jpg} 
@@ -231,7 +176,7 @@ The size of our dataset 大小為26.0MB 共有1200個檔案如Fig.\,\ref{fig:1} 
 \end{CJK*}
 \end{frame}
 
-\begin{frame}{How you collect/build your dataset?}
+\begin{frame}{Dataset}{How you collect/build your dataset?}
 \begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
@@ -244,7 +189,7 @@ The size of our dataset 大小為26.0MB 共有1200個檔案如Fig.\,\ref{fig:1} 
 \end{CJK*}
 \end{frame}
 
-\begin{frame}{How many paired training samples in your dataset?}
+\begin{frame}{Dataset}{How many paired training samples in your dataset?}
 \begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
@@ -254,7 +199,7 @@ The size of our dataset 大小為26.0MB 共有1200個檔案如Fig.\,\ref{fig:1} 
 \end{CJK*}
 \end{frame}
 
-\begin{frame}{How many paired validating samples in your dataset?}
+\begin{frame}{Dataset}{How many paired validating samples in your dataset?}
 \begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
@@ -264,7 +209,7 @@ The size of our dataset 大小為26.0MB 共有1200個檔案如Fig.\,\ref{fig:1} 
 \end{CJK*}
 \end{frame}
 
-\begin{frame}{How many paired testing samples in your dataset?}
+\begin{frame}{Dataset}{How many paired testing samples in your dataset?}
 \begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
@@ -279,7 +224,7 @@ The size of our dataset 大小為26.0MB 共有1200個檔案如Fig.\,\ref{fig:1} 
 
 \section{ Experimental Evaluation }
 
-\begin{frame}{Experimental environment}
+\begin{frame}{ Experimental Evaluation }{Experimental environment}
 \begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
@@ -289,7 +234,7 @@ The size of our dataset 大小為26.0MB 共有1200個檔案如Fig.\,\ref{fig:1} 
 \end{CJK*}
 \end{frame}
 
-\begin{frame}{How many epochs you set for training?}
+\begin{frame}{ Experimental Evaluation }{How many epochs you set for training?}
 \begin{CJK*}{UTF8}{bsmi}
   \begin{itemize}
   \item {
@@ -299,7 +244,7 @@ The size of our dataset 大小為26.0MB 共有1200個檔案如Fig.\,\ref{fig:1} 
 \end{CJK*}
 \end{frame}
 
-\begin{frame}{Qualitative evaluation }
+\begin{frame}{ Experimental Evaluation }{Qualitative evaluation }
   \begin{itemize}
   \item {
     My first point.
@@ -310,7 +255,7 @@ The size of our dataset 大小為26.0MB 共有1200個檔案如Fig.\,\ref{fig:1} 
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Quantitative evaluation }
+\begin{frame}{ Experimental Evaluation }{Quantitative evaluation }
   \begin{itemize}
   \item {
     My first point.
@@ -322,31 +267,7 @@ The size of our dataset 大小為26.0MB 共有1200個檔案如Fig.\,\ref{fig:1} 
 \end{frame}
 
 
-% Placing a * after \section means it will not show in the
-% outline or table of contents.
-\section*{Summary}
 
-\begin{frame}{Summary}
-  \begin{itemize}
-  \item
-    The \alert{first main message} of your talk in one or two lines.
-  \item
-    The \alert{second main message} of your talk in one or two lines.
-  \item
-    Perhaps a \alert{third message}, but not more than that.
-  \end{itemize}
-  
-  \begin{itemize}
-  \item
-    Outlook
-    \begin{itemize}
-    \item
-      Something you haven't solved.
-    \item
-      Something else you haven't solved.
-    \end{itemize}
-  \end{itemize}
-\end{frame}
 
 
 

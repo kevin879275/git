@@ -121,10 +121,13 @@ torch.save( )\\
 
 \begin{frame}{Methodology}{File size of your model }
 \begin{CJK*}{UTF8}{bsmi}
-  \begin{itemize}
-  \item {
-  }
-  \end{itemize}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=5cm]{model.jpg} 
+\end{center} 
+\label{fig:1} 
+\caption{model size} 
+\end{figure}
 \end{CJK*}
 \end{frame}
 
@@ -169,7 +172,7 @@ The size of our dataset 大小為26.0MB 共有1200個檔案如圖\\
 \includegraphics[width=5cm]{dataset.jpg} 
 \end{center} 
 \label{fig:1} 
-\caption{簡易流程圖} 
+\caption{dataset } 
 \end{figure}
   }
   \end{itemize}
@@ -183,7 +186,7 @@ The size of our dataset 大小為26.0MB 共有1200個檔案如圖\\
     Collect：train跟validation的部份我們上kaggle抓裡面的圖片下來用，另外test的部分則是我們自己去拍攝。
   }
   \item {
-    Build：將照片中間往外開始剪裁224*224，利用torch內建的tensorflow，將圖片處理成tensor數據。
+    Build：將照片中間往外開始剪裁224*224，利用torch內建的tramsform，將圖片處理成tensor數據。
   }
   \end{itemize}
 \end{CJK*}
@@ -245,25 +248,27 @@ The size of our dataset 大小為26.0MB 共有1200個檔案如圖\\
 \end{frame}
 
 \begin{frame}{ Experimental Evaluation }{Qualitative evaluation }
-  \begin{itemize}
-  \item {
-    My first point.
-  }
-  \item {
-    My second point.
-  }
-  \end{itemize}
+\begin{CJK*}{UTF8}{bsmi}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=10cm]{eval.jpg} 
+\end{center} 
+\label{fig:1} 
+\caption{質化圖} 
+\end{figure}
+\end{CJK*}
 \end{frame}
 
 \begin{frame}{ Experimental Evaluation }{Quantitative evaluation }
-  \begin{itemize}
-  \item {
-    My first point.
-  }
-  \item {
-    My second point.
-  }
-  \end{itemize}
+\begin{CJK*}{UTF8}{bsmi}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=3cm]{qua.jpg} 
+\end{center} 
+\label{fig:1} 
+\caption{量化圖} 
+\end{figure}
+\end{CJK*}
 \end{frame}
 
 \section{Authorship}
